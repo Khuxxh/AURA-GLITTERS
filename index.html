@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA TEST NO.1 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AURA GLITERS</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cart">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Quench Your Thirst with Our Amazing Beverages!</h2>
+            <p>Discover a wide selection of refreshing drinks for every occasion.</p>
+            <a href="#products" class="button">View Our Drinks</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>Our Delicious Beverages</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="blueberry.jpg" alt="Drink 1">
+                <h3>[BLUEBERRY]</h3>
+                <p class="price">RS.599</p>
+                <button class="add-to-cart" data-name="[BLUEBERRY]" data-price="599">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="staawberry.png" alt="Drink 2">
+                <h3>[STAWBERRY]</h3>
+                <p class="price">RS.450</p>
+                <button class="add-to-cart" data-name="[STAWBERRY]" data-price="450">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="mango.png" alt="Drink 3">
+                <h3>[MANGO]</h3>
+                <p class="price">RS.375</p>
+                <button class="add-to-cart" data-name="[MANGO]" data-price="375">Add to Cart</button>
+            </div>
+            </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About AURA GLITTERS</h2>
+        <p> AURA Glitter Drinks is more than just a beverage; it's an invitation to 
+            experience the extraordinary. With its mesmerizing sparkle, refreshing 
+            flavors, and strategic market positioning, AURA is poised to redefine the 
+            mocktail industry. Thank you for joining us on this exciting journey. Let's 
+            raise a glass to a sparkling future with AURA.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have a question or a special request? Reach out to us!</p>
+        <address>
+            gandhinagar<br>
+            [gujrat]<br>
+            Email: <a href="mailto:[glitterbu0@gmail.com]">[glitterbu0@gmail.com]</a><br>
+            Phone:8082615728
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 [AURA GLITTERS]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartLink = document.querySelector('.cart');
+            let cartCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    cartCount++;
+                    cartLink.textContent = `Cart (${cartCount})`;
+                    const productName = this.dataset.name;
+                    const productPrice = this.dataset.price;
+                    console.log(`Added "${productName}" ($${productPrice}) to cart.`);
+                    // In a real application, you'd update a more persistent cart here.
+                });
+            });
+        });
+    </script>
+</body>
+</html>
